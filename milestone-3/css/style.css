@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  background-color: #DDDDDD;
+}
+
+header {
+  background-color: #fff;
+}
+
+h1 {
+  font-family: 'Acme', sans-serif;
+  color: #2AB1DD;
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.menu {
+  color: white;
+  background-color: #2AB1DD;
+  text-transform: uppercase;
+}
+
+.gs-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px #888888;
+  margin: 30px;
+}
+
+.item-text h5 {
+  font-size: 16px;
+}
+
+.orange {
+  color: orange;
+}
+
+.green {
+  color: green;
+}
+
+.blue {
+  color: blue;
+}
