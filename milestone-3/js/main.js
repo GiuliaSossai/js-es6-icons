@@ -114,14 +114,50 @@ const icons = [
 ];
 
 /**
- * Ciascuna icona ha una proprietà “color”: utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
- * 
- * 
+ * ** Milestone 3 **
+Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone *(animal, vegetable, user)*. Quando l’utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
  */
+
+
+
+//funzion evento change
+document.querySelector('.form-select').addEventListener('change', chooseType());
+
+//funzione per definire il tipo di icone da visualizzare
+function chooseType() {
+  const iconType = parseInt(document.querySelector('.form-select').value);
+	console.log('tipo:', iconType);
+
+	//suddivido l'array in 3 sotto-array per tipo
+
+	//array animali
+	const animals = icons.filter((icon) =>{
+		return icon.type === 'animal'
+	})
+	console.log('animali:', animals);
+
+	//array ortaggi
+	const vegetables = icons.filter((icon) =>{
+		return icon.type === 'vegetable'
+	})
+	console.log('ortaggi:', vegetables);
+
+	//array utenti
+	const users = icons.filter((icon) =>{
+	return icon.type === 'user'
+	})
+	console.log('utenti:', users);
+
+	//voglio visualizzare solo quelle card che hanno iconType===
+	
+}
+
 
 createCards();
 
+
 function createCards(){
+	console.log('dentro funzione crea cards');
   //resetto l'ambiete dove devo stampare l'elenco la prima volta
   document.querySelector('.container').innerHTML = '';
 
@@ -162,7 +198,7 @@ function createHtml(item){
   //definisco struttura html
   prevContent +=
   `
-  <div class="box col-2 flex-column py-3 text-center">
+  <div class="box col-2 flex-column py-3 text-center ${type}">
     <div class="item-image">
       <i class="${family} ${prefix}${name} fs-1 ${color}"></i>
     </div>
@@ -175,47 +211,3 @@ function createHtml(item){
   container.innerHTML = prevContent;
   
 }
-
-
-
-//faccio ciclo su tutto l'array per intercettare i diversi valori di color
-
-// for (let icon in icons){
-//   console.log('una favicon', icon);
-
-//   if (icon.color === 'orange'){
-//     favicons.classList.add('animal-icon');
-//   }
-//   if (icon.color === 'green'){
-//     favicons.classList.add('vegetable-icon');
-//   }
-//   if (icon.color === 'blue'){
-//     favicons.classList.add('user-icon');
-//   }
-// }
-
-
-
-
-
-
-//suddivido l'array in 3 sott-array per categoria
-
-//array animali
-// const animals = icons.filter((icon) =>{
-//   return icon.color === 'orange'
-// })
-// console.log('animali arancioni:', animals);
-// //animals[].classList.add('animal-icon');
-
-// //array ortaggi
-// const vegetables = icons.filter((icon) =>{
-//   return icon.color === 'green'
-// })
-// console.log('ortaggi verdi:', vegetables);
-
-// //array utenti
-// const users = icons.filter((icon) =>{
-//   return icon.color === 'blue'
-// })
-// console.log('utenti blu:', users);
