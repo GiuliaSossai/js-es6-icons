@@ -27,6 +27,11 @@ h1 {
   text-transform: uppercase;
 }
 
+.gs-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .box {
   background-color: #fff;
   border-radius: 10px;
@@ -49,6 +54,3 @@ h1 {
 .user-icon {
   color: blue;
 }
-
-
-
