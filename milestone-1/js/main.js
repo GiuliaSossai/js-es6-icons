@@ -114,7 +114,19 @@ const icons = [
 ];
 
 
-createHtml();
+createCards();
+
+function createCards(){
+  //resetto l'ambiete dove devo stampare l'elenco la prima volta
+  document.querySelector('.container').innerHTML = '';
+
+  // cilo for of su array per ottenere i cari elementi
+  for(let icon of icons){
+    createHtml(icon);
+  }
+
+}
+
 
 //funzione per creare struttura html di ogni card
 function createHtml(item){
@@ -122,6 +134,7 @@ function createHtml(item){
 
   const container = document.querySelector('.container');
   console.log('container', container);
+  let prevContent = container.innerHTML;
 
   //destrutturo oggetto icon per accedere alle sue proprietà
   const {name, prefix, type, family, color} = item;
@@ -129,9 +142,9 @@ function createHtml(item){
   console.log('icona', item);
 
   //definisco struttura html
-  container.innerHTML =
+  prevContent +=
   `
-  <div class="box col-2 flex-column p-3 text-center">
+  <div class="box col-2 flex-column py-3 text-center">
     <div class="item-image">
       <i class="${family} ${prefix}${name} fs-1"></i>
     </div>
@@ -140,5 +153,7 @@ function createHtml(item){
     </div>  
   </div>
   `;
+
+  container.innerHTML = prevContent;
   
 }
