@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  background-color: #DDDDDD;
+}
+
+header {
+  background-color: #fff;
+}
+
+h1 {
+  font-family: 'Acme', sans-serif;
+  color: #2AB1DD;
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.menu {
+  color: white;
+  background-color: #2AB1DD;
+  text-transform: uppercase;
+}
+
+.box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px #888888;
+  margin: 30px;
+}
+
+.item-text h5 {
+  font-size: 16px;
+}
+
+.animal-icon {
+  color: orange;
+}
+
+.vegetable-icon {
+  color: green;
+}
+
+.user-icon {
+  color: blue;
+}
+
+
+
