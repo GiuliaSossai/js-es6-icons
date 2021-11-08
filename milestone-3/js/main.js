@@ -121,15 +121,21 @@ Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi d
 
 
 //funzion evento change
-document.querySelector('.form-select').addEventListener('change', chooseType());
+const form = document.querySelector('.form-select');
+
+form.addEventListener('change', chooseType());
 
 //funzione per definire il tipo di icone da visualizzare
 function chooseType() {
-  const iconType = parseInt(document.querySelector('.form-select').value);
-	console.log('tipo:', iconType);
+  // const numeroScelta = parseInt(document.querySelector('.form-select').value);
+	// console.log('scelta numero:', numeroScelta);
+
+	//const testoScelta = document.querySelector('.form-select').textContent;
+
+	const testoScelta = form.options[form.selectedIndex].text;
+	console.log('testo:', testoScelta);
 
 	//suddivido l'array in 3 sotto-array per tipo
-
 	//array animali
 	const animals = icons.filter((icon) =>{
 		return icon.type === 'animal'
@@ -148,12 +154,16 @@ function chooseType() {
 	})
 	console.log('utenti:', users);
 
-	//voglio visualizzare solo quelle card che hanno iconType===
+	//per ogni numero scelta devo associare solo un icon.type: quindi uno andrà con all, 2 con animal, 3 con vegetable, 4 con user
+	if(testoScelta === 'animal'){
+		createCards();
+		return animals
+	}
 	
 }
 
 
-createCards();
+
 
 
 function createCards(){
