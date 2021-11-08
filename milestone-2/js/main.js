@@ -117,10 +117,13 @@ const icons = [
  * Ciascuna icona ha una proprietà “color”: utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
  */
 const favicons = document.getElementsByClassName('fas');
-console.log('elenco favicons' , favicons);
+//console.log('elenco favicons' , favicons);
 
 //faccio ciclo su tutto l'array per intercettare i diversi valori di color
-for (let icon in favicons){
+
+for (let icon in icons){
+  console.log('una favicon', icon);
+
   if (icon.color === 'orange'){
     favicons.classList.add('animal-icon');
   }
@@ -131,6 +134,11 @@ for (let icon in favicons){
     favicons.classList.add('user-icon');
   }
 }
+
+
+
+
+
 
 //suddivido l'array in 3 sott-array per categoria
 
