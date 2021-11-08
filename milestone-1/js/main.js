@@ -114,18 +114,14 @@ const icons = [
 ];
 
 
-
-
 createHtml();
 
 //funzione per creare struttura html di ogni card
 function createHtml(item){
-  console.log('ciao!');
+  console.log('dentro funzione crea html');
 
   const container = document.querySelector('.container');
   console.log('container', container);
-
-  let prevContent = container.innerHTML;
 
   //destrutturo oggetto icon per accedere alle sue proprietà
   const {name, prefix, type, family, color} = item;
@@ -133,7 +129,7 @@ function createHtml(item){
   console.log('icona', item);
 
   //definisco struttura html
-  prevContent +=
+  container.innerHTML =
   `
   <div class="box col-2 flex-column p-3 text-center">
     <div class="item-image">
@@ -144,7 +140,5 @@ function createHtml(item){
     </div>  
   </div>
   `;
-
-  container.innerHTML = prevContent;
   
 }
