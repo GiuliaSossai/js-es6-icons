@@ -129,19 +129,6 @@ function createCards(){
   for(let icon of icons){
     createHtml(icon);
 		console.log('icona:', icon);
-
-		// const element = document.querySelector('.fas');
-		
-		// if (icon.color === 'orange'){
-		// 	console.log('animale')
-		// 	element.classList.add('animal-icon');
-		// }else if (icon.color === 'green'){
-		// 	console.log('frutta')
-		// 	element.classList.add('vegetable-icon');
-		// } else {
-		// 	console.log('user')
-		// 	element.classList.add('user-icon');
-		// }
 			
   }
 
@@ -159,18 +146,18 @@ function createHtml(item){
   //destrutturo oggetto icon per accedere alle sue proprietà
   const {name, prefix, type, family, color} = item;
 
-	const element = document.querySelector('.fas');
+	// const element = document.querySelector('.fas');
 		
-	if (item.color === 'orange'){
-		console.log('animale')
-		element.classList.add('animal-icon');
-	}else if (item.color === 'green'){
-		console.log('frutta')
-		element.classList.add('vegetable-icon');
-	} else {
-		console.log('user')
-		element.classList.add('user-icon');
-	}
+	// if (item.color === 'orange'){
+	// 	console.log('animale')
+	// 	element.classList.add('animal-icon');
+	// }else if (item.color === 'green'){
+	// 	console.log('frutta')
+	// 	element.classList.add('vegetable-icon');
+	// } else {
+	// 	console.log('user')
+	// 	element.classList.add('user-icon');
+	// }
 
   //definisco struttura html
   prevContent +=
