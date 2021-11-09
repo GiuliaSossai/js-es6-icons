@@ -122,55 +122,43 @@ const icons = [
  * creo una funzione per stampare i dati
  * quando carico la pagina, la funzione le stampa tutte!!! 
  * ma: stampa un paramentro che è un array che contiene le icone da stampare (solo al caricamento saranno tutte le icone))
+ * 
+ * 
+ * 
  * ** Milestone 3 **
 Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone *(animal, vegetable, user)*. Quando l’utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
  */
 
+//con arrow function faccio funzione chooseType
+const chooseType = (event) => {
+	console.log('dentro funzione chooseType');
+	/**
+	 * prendo value della select
+	 * filtro l'array in base al value
+	 * chiamo funzione per stampare le card selezionate
+	 */
 
+	const chosenType = event.target.value;
+	console.log('valore selezionato', chosenType);
 
-//funzion evento change
-// const form = document.querySelector('select');
+	//inizializzo array vuoto dove andrò a mettere le card slezionate col select
+	let chosenIcons = [];
 
-// form.addEventListener('change', chooseType());
+	//devo anche stabilire che se seleziono "all" allora avrò stampate tutte le card, indipendentemente dal tipo
+	if(chosenType === 'all'){
+		chosenIcons = icons;
+	} else {
+		//adesso posso filtrare l'array
+		chosenIcons = icons.filter((icon) => {
+			return chosenType === icon.type;
+		});
+	}
 
-// //funzione per definire il tipo di icone da visualizzare
-// function chooseType() {
-//   // const numeroScelta = parseInt(document.querySelector('.form-select').value);
-// 	// console.log('scelta numero:', numeroScelta);
+	createCards(chosenIcons);
+}
 
-// 	//const testoScelta = document.querySelector('.form-select').textContent;
-
-// 	const testoScelta = form.options[form.selectedIndex].text;
-// 	console.log('testo:', testoScelta);
-
-// 	//suddivido l'array in 3 sotto-array per tipo
-// 	//array animali
-// 	const animals = icons.filter((icon) =>{
-// 		return icon.type === 'animal'
-// 	})
-// 	console.log('animali:', animals);
-
-	//array ortaggi
-// 	const vegetables = icons.filter((icon) =>{
-// 		return icon.type === 'vegetable'
-// 	})
-// 	console.log('ortaggi:', vegetables);
-
-// 	//array utenti
-// 	const users = icons.filter((icon) =>{
-// 	return icon.type === 'user'
-// 	})
-// 	console.log('utenti:', users);
-
-// 	//per ogni numero scelta devo associare solo un icon.type: quindi uno andrà con all, 2 con animal, 3 con vegetable, 4 con user
-// 	if(testoScelta === 'animal'){
-// 		createCards();
-// 		return animals
-// 	}
-	
-// }
-
-
+//funzione evento change
+document.querySelector('select').addEventListener('change', chooseType);
 
 createCards();
 
@@ -182,12 +170,9 @@ function createCards(){
   // cilo for of su array per ottenere i cari elementi
   for(let icon of icons){
     createHtml(icon);
-		console.log('icona:', icon);
-			
+		console.log('icona:', icon);		
   }
-
 }
-
 
 //funzione per creare struttura html di ogni card
 function createHtml(item){
@@ -200,23 +185,10 @@ function createHtml(item){
   //destrutturo oggetto icon per accedere alle sue proprietà
   const {name, prefix, family, color} = item;
 
-	// const element = document.querySelector('.fas');
-		
-	// if (item.color === 'orange'){
-	// 	console.log('animale')
-	// 	element.classList.add('animal-icon');
-	// }else if (item.color === 'green'){
-	// 	console.log('frutta')
-	// 	element.classList.add('vegetable-icon');
-	// } else {
-	// 	console.log('user')
-	// 	element.classList.add('user-icon');
-	// }
-
   //definisco struttura html
   prevContent +=
   `
-		<div class="box p-3 text-center">
+		<div class="box text-center">
       <i class="${family} ${prefix}${name} fs-1" style="color:${color}""></i>
       <h5 class="text-uppercase fs-5">${name}</h5>
     </div>  
