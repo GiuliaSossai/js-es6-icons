@@ -129,6 +129,7 @@ const icons = [
 Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone *(animal, vegetable, user)*. Quando l’utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
  */
 
+
 //con arrow function faccio funzione chooseType
 const chooseType = (event) => {
 	console.log('dentro funzione chooseType');
@@ -139,7 +140,7 @@ const chooseType = (event) => {
 	 */
 
 	const chosenType = event.target.value;
-	console.log('valore selezionato', chosenType);
+	console.log('valore selezionato:', chosenType);
 
 	//inizializzo array vuoto dove andrò a mettere le card slezionate col select
 	let chosenIcons = [];
@@ -157,8 +158,11 @@ const chooseType = (event) => {
 	createCards(chosenIcons);
 }
 
+//prendo container
+const container = document.querySelector('.container');
+
 //funzione evento change
-document.querySelector('select').addEventListener('change', chooseType);
+document.querySelector('.form-select').addEventListener('change', chooseType);
 
 createCards();
 
@@ -179,7 +183,7 @@ function createHtml(item){
   console.log('dentro funzione crea html');
 
   const container = document.querySelector('.container');
-  console.log('container', container);
+  //console.log('container', container);
   let prevContent = container.innerHTML;
 
   //destrutturo oggetto icon per accedere alle sue proprietà
@@ -192,7 +196,7 @@ function createHtml(item){
       <i class="${family} ${prefix}${name} fs-1" style="color:${color}""></i>
       <h5 class="text-uppercase fs-5">${name}</h5>
     </div>  
-  </div>
+ 
   `;
 
   container.innerHTML = prevContent;
