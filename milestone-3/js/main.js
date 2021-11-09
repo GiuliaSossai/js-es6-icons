@@ -164,15 +164,15 @@ const container = document.querySelector('.container');
 //funzione evento change
 document.querySelector('.form-select').addEventListener('change', chooseType);
 
-createCards();
+createCards(icons);
 
-function createCards(){
+function createCards(iconsList){
 	console.log('dentro funzione crea cards');
   //resetto l'ambiete dove devo stampare l'elenco la prima volta
   document.querySelector('.container').innerHTML = '';
 
   // cilo for of su array per ottenere i cari elementi
-  for(let icon of icons){
+  for(let icon of iconsList){
     createHtml(icon);
 		console.log('icona:', icon);		
   }
