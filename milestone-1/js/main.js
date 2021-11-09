@@ -137,19 +137,16 @@ function createHtml(item){
   let prevContent = container.innerHTML;
 
   //destrutturo oggetto icon per accedere alle sue proprietà
-  const {name, prefix, type, family, color} = item;
+  const {name, prefix, family, color} = item;
   console.log('nome icona', name);
   console.log('icona', item);
 
   //definisco struttura html
   prevContent +=
   `
-  <div class="box col-2 flex-column py-3 text-center">
-    <div class="item-image">
+		<div class="box p-3 text-center">
       <i class="${family} ${prefix}${name} fs-1"></i>
-    </div>
-    <div class="item-text text-uppercase">
-       <h5>${name}</h5>
+      <h5 class="text-uppercase fs-5">${name}</h5>
     </div>  
   </div>
   `;

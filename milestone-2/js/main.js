@@ -113,11 +113,6 @@ const icons = [
 	}
 ];
 
-/**
- * Ciascuna icona ha una proprietà “color”: utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
- * 
- * 
- */
 
 createCards();
 
@@ -128,8 +123,6 @@ function createCards(){
   // cilo for of su array per ottenere i cari elementi
   for(let icon of icons){
     createHtml(icon);
-		console.log('icona:', icon);
-			
   }
 
 }
@@ -144,78 +137,21 @@ function createHtml(item){
   let prevContent = container.innerHTML;
 
   //destrutturo oggetto icon per accedere alle sue proprietà
-  const {name, prefix, type, family, color} = item;
-
-	// const element = document.querySelector('.fas');
-		
-	// if (item.color === 'orange'){
-	// 	console.log('animale')
-	// 	element.classList.add('animal-icon');
-	// }else if (item.color === 'green'){
-	// 	console.log('frutta')
-	// 	element.classList.add('vegetable-icon');
-	// } else {
-	// 	console.log('user')
-	// 	element.classList.add('user-icon');
-	// }
+  const {name, prefix, family, color} = item;
+  console.log('nome icona', name);
+  console.log('icona', item);
 
   //definisco struttura html
   prevContent +=
   `
-  <div class="box col-2 flex-column py-3 text-center">
-    <div class="item-image">
-      <i class="${family} ${prefix}${name} fs-1 ${color}"></i>
-    </div>
-    <div class="item-text text-uppercase">
-       <h5>${name}</h5>
+		<div class="box p-3 text-center">
+      <i class="${family} ${prefix}${name} fs-1" style="color:${color}""></i>
+      <h5 class="text-uppercase fs-5">${name}</h5>
     </div>  
   </div>
   `;
+	//uso style inline per assegnare proprietà color direttamente in html
 
   container.innerHTML = prevContent;
   
 }
-
-
-
-//faccio ciclo su tutto l'array per intercettare i diversi valori di color
-
-// for (let icon in icons){
-//   console.log('una favicon', icon);
-
-//   if (icon.color === 'orange'){
-//     favicons.classList.add('animal-icon');
-//   }
-//   if (icon.color === 'green'){
-//     favicons.classList.add('vegetable-icon');
-//   }
-//   if (icon.color === 'blue'){
-//     favicons.classList.add('user-icon');
-//   }
-// }
-
-
-
-
-
-
-//suddivido l'array in 3 sott-array per categoria
-
-//array animali
-// const animals = icons.filter((icon) =>{
-//   return icon.color === 'orange'
-// })
-// console.log('animali arancioni:', animals);
-// //animals[].classList.add('animal-icon');
-
-// //array ortaggi
-// const vegetables = icons.filter((icon) =>{
-//   return icon.color === 'green'
-// })
-// console.log('ortaggi verdi:', vegetables);
-
-// //array utenti
-// const users = icons.filter((icon) =>{
-//   return icon.color === 'blue'
-// })
-// console.log('utenti blu:', users);

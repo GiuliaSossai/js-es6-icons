@@ -24,177 +24,35 @@
 </head>
 <body>
   <header>
-    <h1 class="pt-2 ps-2">FontIcons</h1>
-  </header>
+    <div class="logo">
+      <h1 class="pt-2 ps-2">FontIcons</h1>
+    </div>
+    
 
-  <main>
-    <section class="row justify-content-center menu py-3">
-      <div class="col-2">
+    <div class="menu d-flex justify-content-center align-items-center">
+      <div class="text">
         <h3>filtra per tipo</h3>
       </div>
 
-      <div class="col-2">
-        <select class="form-select" aria-label="Default select example">
-          <option selected>All</option>
-          <option value="1">Animal</option>
-          <option value="2">Vegetable</option>
-          <option value="3">User</option>
+      <div class="select">
+        <select class="form-select mx-5">
+          <option value="all" selected>All</option>
+          <option value="animal">Animal</option>
+          <option value="vegetable">Vegetable</option>
+          <option value="user">User</option>
         </select>
       </div>
-    </section>
+    </div>
 
-    <section class="gs-container container row justify-content-center">
-      <!-- <div class="row flex-start"> -->
-        <!-- <div class="box col-2 flex-column p-3 text-center">
-          <div class="item-image">
-            <i class="fas fa-cat fs-1"></i>
-          </div>
-          <div class="item-text text-uppercase">
-            <h5>cat</h5>
-          </div>  
-        </div> -->
+  </header>
 
-        <!-- <div class="box col-2 flex-column p-3 text-center">
-          <div class="item-image">
-            <i class="fas fa-crow fs-1"></i>
-          </div>
-          <div class="item-text text-uppercase">
-            <h5>crow</h5>
-          </div>  
+  <main class="container d-flex flex-wrap justify-content-center">
+        <div class="box p-3 text-center">
+          <i class="fas fa-cat fs-1"></i>
+          <h5 class="text-uppercase fs-5">cat</h5>
         </div>
-          
-        <div class="box col-2 flex-column p-3 text-center">
-          <div class="item-image">
-            <i class="fas fa-dog fs-1"></i>
-          </div>
-          <div class="item-text text-uppercase">
-            <h5>dog</h5>
-          </div>  
-        </div>
-
-        <div class="box col-2 flex-column p-3 text-center">
-          <div class="item-image">
-            <i class="fas fa-dove fs-1"></i>
-          </div>
-          <div class="item-text text-uppercase">
-            <h5>dove</h5>
-          </div>  
-        </div>
-        
-        <div class="box col-2 flex-column p-3 text-center">
-          <div class="item-image">
-            <i class="fas fa-dragon fs-1"></i>
-          </div>
-          <div class="item-text text-uppercase">
-            <h5>dragon</h5>
-          </div>  
-        </div>  
-      
-        <div class="box col-2 flex-column p-3 text-center">
-          <div class="item-image">
-            <i class="fas fa-horse fs-1"></i>
-          </div>
-          <div class="item-text text-uppercase">
-            <h5>horse</h5>
-          </div>  
-        </div>
-
-        <div class="box col-2 flex-column p-3 text-center">
-          <div class="item-image">
-            <i class="fas fa-hippo fs-1"></i>
-          </div>
-          <div class="item-text text-uppercase">
-            <h5>hippo</h5>
-          </div>  
-        </div>
-          
-        <div class="box col-2 flex-column p-3 text-center">
-          <div class="item-image">
-            <i class="fas fa-fish fs-1"></i>
-          </div>
-          <div class="item-text text-uppercase">
-            <h5>fish</h5>
-          </div>  
-        </div>
-
-        <div class="box col-2 flex-column p-3 text-center">
-          <div class="item-image">
-            <i class="fas fa-carrot fs-1"></i>
-          </div>
-          <div class="item-text text-uppercase">
-            <h5>carrot</h5>
-          </div>  
-        </div>
-        
-        <div class="box col-2 flex-column p-3 text-center">
-          <div class="item-image">
-            <i class="fas fa-apple-alt fs-1"></i>
-          </div>
-          <div class="item-text text-uppercase">
-            <h5>apple-alt</h5>
-          </div>  
-        </div>  
-      
-        <div class="box col-2 flex-column p-3 text-center">
-          <div class="item-image">
-            <i class="fas fa-lemon fs-1"></i>
-          </div>
-          <div class="item-text text-uppercase">
-            <h5>lemon</h5>
-          </div>  
-        </div>
-
-        <div class="box col-2 flex-column p-3 text-center">
-          <div class="item-image">
-            <i class="fas fa-pepper-hot fs-1"></i>
-          </div>
-          <div class="item-text text-uppercase">
-            <h5>pepper-hot</h5>
-          </div>  
-        </div>
-          
-        <div class="box col-2 flex-column p-3 text-center">
-          <div class="item-image">
-            <i class="fas fa-user-astronaut fs-1"></i>
-          </div>
-          <div class="item-text text-uppercase">
-            <h5>user-astronaut</h5>
-          </div>  
-        </div>
-
-        <div class="box col-2 flex-column p-3 text-center">
-          <div class="item-image">
-            <i class="fas fa-user-graduate fs-1"></i>
-          </div>
-          <div class="item-text text-uppercase">
-            <h5>user-graduate</h5>
-          </div>  
-        </div>
-        
-        <div class="box col-2 flex-column p-3 text-center">
-          <div class="item-image">
-            <i class="fas fa-user-ninja fs-1"></i>
-          </div>
-          <div class="item-text text-uppercase">
-            <h5>user-ninja</h5>
-          </div>  
-        </div>  
-
-        <div class="box col-2 flex-column p-3 text-center">
-          <div class="item-image">
-            <i class="fas fa-user-secret fs-1"></i>
-          </div>
-          <div class="item-text text-uppercase">
-            <h5>user-secret</h5>
-          </div>  
-        </div>-->
-      </div> 
-      
-    </section>
   </main>
 
-  
-
-  <script src="js/main.js"></script>
+   <script src="js/main.js"></script>
 </body>
 </html>

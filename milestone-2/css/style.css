@@ -9,7 +9,8 @@ body {
   background-color: #DDDDDD;
 }
 
-header {
+.logo {
+  height: 70px;
   background-color: #fff;
 }
 
@@ -22,28 +23,23 @@ h1 {
 }
 
 .menu {
+  height: 50px;
   color: white;
   background-color: #2AB1DD;
   text-transform: uppercase;
 }
 
-.gs-container {
-  width: 80%;
-  margin: 0 auto;
-}
-
 .box {
+  width: 200px;
+  text-align: center;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 5px 5px #888888;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, .3);
+  padding: 20px 0;
   margin: 30px;
 }
 
-.item-text h5 {
-  font-size: 16px;
-}
-
-.orange {
+/* .orange {
   color: orange;
 }
 
@@ -53,4 +49,4 @@ h1 {
 
 .blue {
   color: blue;
-}
+} userò direttamente stile inline, più semplice*/

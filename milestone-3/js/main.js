@@ -114,6 +114,14 @@ const icons = [
 ];
 
 /**
+ * - inizializzare i dati
+ * - ciclare l'array
+ * - per ogni ciclo generare un template html con dati dinamici
+ * - stampare i dati
+ * dove li stampo?? dopo il container
+ * creo una funzione per stampare i dati
+ * quando carico la pagina, la funzione le stampa tutte!!! 
+ * ma: stampa un paramentro che è un array che contiene le icone da stampare (solo al caricamento saranno tutte le icone))
  * ** Milestone 3 **
 Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone *(animal, vegetable, user)*. Quando l’utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
  */
@@ -121,50 +129,50 @@ Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi d
 
 
 //funzion evento change
-const form = document.querySelector('.form-select');
+// const form = document.querySelector('select');
 
-form.addEventListener('change', chooseType());
+// form.addEventListener('change', chooseType());
 
-//funzione per definire il tipo di icone da visualizzare
-function chooseType() {
-  // const numeroScelta = parseInt(document.querySelector('.form-select').value);
-	// console.log('scelta numero:', numeroScelta);
+// //funzione per definire il tipo di icone da visualizzare
+// function chooseType() {
+//   // const numeroScelta = parseInt(document.querySelector('.form-select').value);
+// 	// console.log('scelta numero:', numeroScelta);
 
-	//const testoScelta = document.querySelector('.form-select').textContent;
+// 	//const testoScelta = document.querySelector('.form-select').textContent;
 
-	const testoScelta = form.options[form.selectedIndex].text;
-	console.log('testo:', testoScelta);
+// 	const testoScelta = form.options[form.selectedIndex].text;
+// 	console.log('testo:', testoScelta);
 
-	//suddivido l'array in 3 sotto-array per tipo
-	//array animali
-	const animals = icons.filter((icon) =>{
-		return icon.type === 'animal'
-	})
-	console.log('animali:', animals);
+// 	//suddivido l'array in 3 sotto-array per tipo
+// 	//array animali
+// 	const animals = icons.filter((icon) =>{
+// 		return icon.type === 'animal'
+// 	})
+// 	console.log('animali:', animals);
 
 	//array ortaggi
-	const vegetables = icons.filter((icon) =>{
-		return icon.type === 'vegetable'
-	})
-	console.log('ortaggi:', vegetables);
+// 	const vegetables = icons.filter((icon) =>{
+// 		return icon.type === 'vegetable'
+// 	})
+// 	console.log('ortaggi:', vegetables);
 
-	//array utenti
-	const users = icons.filter((icon) =>{
-	return icon.type === 'user'
-	})
-	console.log('utenti:', users);
+// 	//array utenti
+// 	const users = icons.filter((icon) =>{
+// 	return icon.type === 'user'
+// 	})
+// 	console.log('utenti:', users);
 
-	//per ogni numero scelta devo associare solo un icon.type: quindi uno andrà con all, 2 con animal, 3 con vegetable, 4 con user
-	if(testoScelta === 'animal'){
-		createCards();
-		return animals
-	}
+// 	//per ogni numero scelta devo associare solo un icon.type: quindi uno andrà con all, 2 con animal, 3 con vegetable, 4 con user
+// 	if(testoScelta === 'animal'){
+// 		createCards();
+// 		return animals
+// 	}
 	
-}
+// }
 
 
 
-
+createCards();
 
 function createCards(){
 	console.log('dentro funzione crea cards');
@@ -190,7 +198,7 @@ function createHtml(item){
   let prevContent = container.innerHTML;
 
   //destrutturo oggetto icon per accedere alle sue proprietà
-  const {name, prefix, type, family, color} = item;
+  const {name, prefix, family, color} = item;
 
 	// const element = document.querySelector('.fas');
 		
@@ -208,12 +216,9 @@ function createHtml(item){
   //definisco struttura html
   prevContent +=
   `
-  <div class="box col-2 flex-column py-3 text-center ${type}">
-    <div class="item-image">
-      <i class="${family} ${prefix}${name} fs-1 ${color}"></i>
-    </div>
-    <div class="item-text text-uppercase">
-       <h5>${name}</h5>
+		<div class="box p-3 text-center">
+      <i class="${family} ${prefix}${name} fs-1" style="color:${color}""></i>
+      <h5 class="text-uppercase fs-5">${name}</h5>
     </div>  
   </div>
   `;
